@@ -51,4 +51,26 @@ export class Connect4 {
     //place the current player's disc in the selected column
     this.grid[row][col] = this.currentPlayer;
   }
+
+  switchPlayers(): void {
+    // switch the player between 1 and 2
+    this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+  }
+
+  checkForWin(): boolean {
+    //Check for a win by checking horizontally, vertically and diagonally.
+    return (
+      this.checkHorizontalWin() ||
+      this.checkVerticalWin() ||
+      this.checkDiagonalUpWin() ||
+      this.checkDiagonalDownWin()
+    );
+  }
+
+  //Methods for checking win conditions
+
+  checkHorizontalWin(): boolean {}
+  checkVerticalWin(): boolean {}
+  checkDiagonalUpWin(): boolean {}
+  checkDiagonalDownWin(): boolean {}
 }
